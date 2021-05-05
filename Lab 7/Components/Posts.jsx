@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import PostListItem from './PostListItem';
 import Post from './Post';
+import { Link } from 'react-router-dom';
+
 export default class Posts extends Component {
  constructor(props) {
  super(props);
@@ -37,6 +39,7 @@ export default class Posts extends Component {
         <div>
             {this.state.post ? <Post post={this.state.post}/> : ''}
         </div>
+        <Link to="/add">Add</Link> 
     </div>
     )
     }

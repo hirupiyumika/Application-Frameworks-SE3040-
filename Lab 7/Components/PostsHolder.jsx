@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import AddPost from './AddPost';
 import Posts from './Posts';
 
 const posts = [
@@ -27,8 +28,16 @@ export default class PostsHolder extends Component {
  render() {
  return( 
      <>
-    <Posts posts={posts}/>
-    <Link to="/add">Add</Link>
+        <Router>
+            <Switch>
+                <Route exact path="/">
+                    <Posts posts={posts}/>
+                </Route>
+                <Route path="/add">
+                    <AddPost save={this.addNewPost}/>
+                </Route>
+            </Switch>
+        </Router>
     </>
     );
 

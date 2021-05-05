@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import PostsHolder from './Components/PostsHolder';
-import AddPost from './Components/AddPost';
 
 export default class App extends Component {
  constructor(props) {
@@ -10,16 +8,9 @@ export default class App extends Component {
 
  render() {
     return (
-      <Router>
-         <Switch>
-            <Route exact path="/">
-               <PostsHolder/>
-            </Route>
-            <Route path="/add">
-               <AddPost save={this.addNewPost}/>
-            </Route>
-         </Switch>
-      </Router>
+      <div>
+         <PostsHolder/>
+      </div>
     )
  }
 }

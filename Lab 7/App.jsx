@@ -15,7 +15,7 @@ export default class App extends Component {
             <Route exact path="/">
                <PostsHolder/>
             </Route>
-            <Route exact path="/add">
+            <Route path="/add">
                <AddPost save={this.addNewPost}/>
             </Route>
          </Switch>
